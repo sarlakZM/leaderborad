@@ -15,6 +15,6 @@ And finally you can enter (http://127.0.0.1:4200) in browser url and go on .
 
 ## More Information
 
- - Frond End (backend-nodejs-express/README.md)
+ - [Frond End](backend-nodejs-express/README.md)
 
- - Back End (frontend-angular8/README.md)
+ - [Back End](frontend-angular8/README.md)
