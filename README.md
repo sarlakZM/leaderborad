@@ -4,9 +4,9 @@ You will find the coding assignment in the ASSIGNMENT.md file.
 
 # For running the project :
 
-1 ) You must enter to frontend folder and run ng server (http://127.0.0.1:4200)
+1 ) You must enter frontend folder and run ng server (http://127.0.0.1:4200)
 
-1 ) You must enter to backend folder and run npm run start:dev (http://127.0.0.1:7000)
+1 ) You must enter backend folder and run npm run start:dev (http://127.0.0.1:7000)
 
 And finally you can enter (http://127.0.0.1:4200) in browser url and go on . 
 
@@ -15,6 +15,6 @@ And finally you can enter (http://127.0.0.1:4200) in browser url and go on .
 
 ## More Information
 
-Frond End => backend-nodejs-express/README.md
+ - Frond End (backend-nodejs-express/README.md)
 
-Back End => frontend-angular8/README.md
+ - Back End (frontend-angular8/README.md)
