@@ -1,0 +1,256 @@
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+/////////////////////////////////////////////////////////////////
+
+$color__border: #E0E0E0;
+@mixin cardBorder() {
+    border: 1px solid $color__border;
+}
+
+$media-gt-md: 'screen and (max-width: 1279px)';
+@mixin gt-md {
+    @media #{$media-gt-md} {
+        @content;
+    }
+}
+
+$media-md: 'screen and (min-width: 960px) and (max-width: 1279px)';
+@mixin md {
+    @media #{$media-md} {
+        @content;
+    }
+}
+
+$media-lt-sm: 'screen and (max-width: 959px)';
+@mixin lt-sm {
+    @media #{$media-lt-sm} {
+        @content;
+    }
+}
+
+$padding__page: 24px;
+$padding__page__small: 16px;
+@mixin responsivePadding($dir: all, $reverse: false) {
+    @if $reverse==false {
+        @if $dir=='all' {
+            padding: $padding__page;
+            @include gt-md {
+                padding: $padding__page__small;
+            }
+        }
+        @else if $dir=='top' {
+            padding-top: $padding__page;
+            @include gt-md {
+                padding-top: $padding__page__small;
+            }
+        }
+        @else if $dir=='right' {
+            padding-right: $padding__page;
+            @include gt-md {
+                padding-right: $padding__page__small;
+            }
+        }
+        @else if $dir=='bottom' {
+            padding-bottom: $padding__page;
+            @include gt-md {
+                padding-bottom: $padding__page__small;
+            }
+        }
+        @else if $dir=='left' {
+            padding-left: $padding__page;
+            @include gt-md {
+                padding-left: $padding__page__small;
+            }
+        }
+    }
+    @else if $reverse==true {
+        @if $dir=='all' {
+            margin: -$padding__page;
+            @include gt-md {
+                margin: -$padding__page__small;
+            }
+        }
+        @else if $dir=='top' {
+            margin-top: -$padding__page;
+            @include gt-md {
+                margin-top: -$padding__page__small;
+            }
+        }
+        @else if $dir=='right' {
+            margin-right: -$padding__page;
+            @include gt-md {
+                margin-right: -$padding__page__small;
+            }
+        }
+        @else if $dir=='bottom' {
+            margin-bottom: -$padding__page;
+            @include gt-md {
+                margin-bottom: -$padding__page__small;
+            }
+        }
+        @else if $dir=='left' {
+            margin-left: -$padding__page;
+            @include gt-md {
+                margin-left: -$padding__page__small;
+            }
+        }
+    }
+}
+
+$padding__page__half: $padding__page / 2;
+$padding__page__small__half: $padding__page__small / 2;
+@mixin responsivePaddingHalf($dir: all, $reverse: false) {
+    @if $reverse==false {
+        @if $dir=='all' {
+            padding: $padding__page__half;
+            @include gt-md {
+                padding: $padding__page__small__half;
+            }
+        }
+        @else if $dir=='top' {
+            padding-top: $padding__page__half;
+            @include gt-md {
+                padding-top: $padding__page__small__half;
+            }
+        }
+        @else if $dir=='right' {
+            padding-right: $padding__page__half;
+            @include gt-md {
+                padding-right: $padding__page__small__half;
+            }
+        }
+        @else if $dir=='bottom' {
+            padding-bottom: $padding__page__half;
+            @include gt-md {
+                padding-bottom: $padding__page__small__half;
+            }
+        }
+        @else if $dir=='left' {
+            padding-left: $padding__page__half;
+            @include gt-md {
+                padding-left: $padding__page__small__half;
+            }
+        }
+    }
+    @else if $reverse==true {
+        @if $dir=='all' {
+            margin: -$padding__page__half;
+            @include gt-md {
+                margin: -$padding__page__small__half;
+            }
+        }
+        @else if $dir=='top' {
+            margin-top: -$padding__page__half;
+            @include gt-md {
+                margin-top: -$padding__page__small__half;
+            }
+        }
+        @else if $dir=='right' {
+            margin-right: -$padding__page__half;
+            @include gt-md {
+                margin-right: -$padding__page__small__half;
+            }
+        }
+        @else if $dir=='bottom' {
+            margin-bottom: -$padding__page__half;
+            @include gt-md {
+                margin-bottom: -$padding__page__small__half;
+            }
+        }
+        @else if $dir=='left' {
+            margin-left: -$padding__page__half;
+            @include gt-md {
+                margin-left: -$padding__page__small__half;
+            }
+        }
+    }
+}
+
+@mixin responsiveMargin($dir: all) {
+    @if $dir=='all' {
+        margin: $padding__page;
+        @include gt-md {
+            margin: $padding__page__small;
+        }
+    }
+    @else if $dir=='top' {
+        margin-top: $padding__page;
+        @include gt-md {
+            margin-top: $padding__page__small;
+        }
+    }
+    @else if $dir=='right' {
+        margin-right: $padding__page;
+        @include gt-md {
+            margin-right: $padding__page__small;
+        }
+    }
+    @else if $dir=='bottom' {
+        margin-bottom: $padding__page;
+        @include gt-md {
+            margin-bottom: $padding__page__small;
+        }
+    }
+    @else if $dir=='left' {
+        margin-left: $padding__page;
+        @include gt-md {
+            margin-left: $padding__page__small;
+        }
+    }
+}
+
+$margin__page__half: $padding__page / 2;
+$margin__page__small__half: $padding__page__small / 2;
+@mixin responsiveMarginHalf($dir: all) {
+    @if $dir=='all' {
+        margin: $margin__page__half;
+        @include gt-md {
+            margin: $margin__page__small__half;
+        }
+    }
+    @else if $dir=='top' {
+        margin-top: $margin__page__half;
+        @include gt-md {
+            margin-top: $margin__page__small__half;
+        }
+    }
+    @else if $dir=='right' {
+        margin-right: $margin__page__half;
+        @include gt-md {
+            margin-right: $margin__page__small__half;
+        }
+    }
+    @else if $dir=='bottom' {
+        margin-bottom: $margin__page__half;
+        @include gt-md {
+            margin-bottom: $margin__page__small__half;
+        }
+    }
+    @else if $dir=='left' {
+        margin-left: $margin__page__half;
+        @include gt-md {
+            margin-left: $margin__page__small__half;
+        }
+    }
+}
+
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: ($height / $width) * 100%;
+    }
+    >.content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}

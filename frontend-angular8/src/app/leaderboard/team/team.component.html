@@ -1,0 +1,68 @@
+
+
+<div class="list">
+  <mat-card fxLayout="row" class="header">  
+    <span><strong> {{ routeTitle }} </strong></span>
+      <button mat-stroked-button disabled>
+        <mat-icon class="start">star</mat-icon>
+        Total Score : <strong>{{totalScore}}</strong>
+      </button> 
+      <div>
+        <button fxFlex="20" (click)="refresh()" type="button" mat-fab mat-mini-fab 
+              matTooltip="Refresh" matTooltipPosition="above" color="primary">
+          <mat-icon>refresh</mat-icon>
+        </button>  
+        <button fxFlex="20" (click)="openDialogAdd()" type="button" mat-fab mat-mini-fab 
+                matTooltip="Add Team" matTooltipPosition="above" color="primary">
+            <mat-icon>add</mat-icon>
+        </button>
+      </div>
+
+
+  </mat-card>
+  <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+      <!-- Item List show -->
+      <ng-container *ngFor="let column of columns">
+        <ng-container *ngIf="column.isModelProperty"  [matColumnDef]="column.property">
+            <mat-header-cell *matHeaderCellDef mat-sort-header disableClear="true"> {{column.name}}
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row" matTooltip="{{row[column.property]}}" matTooltipPosition="above">
+              <mat-icon *ngIf="column.property === 'step_counter'" class="start">star</mat-icon>
+
+                <span>{{ row[column.property] }}</span>
+             </mat-cell>
+        </ng-container>
+    </ng-container>
+    <ng-container  matColumnDef="actions">
+      <mat-header-cell  *matHeaderCellDef>Actions</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+          <button  id="detail_{{row['name']}}" type="button" matTooltip="Detail" 
+          matTooltipPosition="above" mat-icon-button color="primary" (click)="detail(row)">
+              <mat-icon>info</mat-icon>
+          </button>
+      </mat-cell>
+  </ng-container>
+  
+  
+    <mat-header-row  *matHeaderRowDef="visibleColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: visibleColumns;"></mat-row>
+  </mat-table>
+  <mat-card *ngIf="dataSource.length == 0" fxLayout="row" class="not-found-lists">  
+      <div class="not-found-message">
+          <h3>No results found</h3>
+          <h3>Problem in get result!<br> please try again.</h3>
+          <button (click)="refresh()" mat-button matTooltip="Retry" matTooltipPosition="above" color="warn" aria-label="right">
+            <mat-icon>refresh</mat-icon>
+            <label>Retry</label>
+        </button>
+      </div>
+      <img class="no-result-img" src="../../../assets/no-results.gif?">
+  </mat-card>
+
+
+</div>
+
+
