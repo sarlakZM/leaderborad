@@ -28,4 +28,4 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 The following pictures display the structure and flows in project :  
 
-![img](https://github.com/sarlakZM/web-balloon-storefront-react/blob/master/src/assets/leaderboard-frontend.drawio.png)
+![img](src/assets/leaderboard-frontend.drawio.png)
