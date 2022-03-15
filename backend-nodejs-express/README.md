@@ -27,4 +27,4 @@ Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.gi
 
 The following pictures display the structure and flows in project :  
 
-![img](https://github.com/sarlakZM/solution-fullstack-ZahraSarlak/blob/master/backend-nodejs-express/src/assets/leaderboard-backend.drawio.png)
+![img](https://github.com/sarlakZM/leaderborad/tree/master/backend-nodejs-express/src/assets/leaderboard-backend.drawio.png)
