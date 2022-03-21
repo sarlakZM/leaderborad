@@ -45,10 +45,13 @@ export class TeamComponent extends BaseListComponent<ITeam, TeamService> {
   async getTotalScore(): Promise<void> {
     const items: ITeam[] = await this.getAll();
     let sum: number = 0;
-    for(let item of items){
-      sum += item.step_counter;
+    if(items != undefined){
+      for(let item of items){
+        sum += item.step_counter;
+      }
+      this.totalScore = sum;
     }
-    this.totalScore = sum;
+
   }
 
 

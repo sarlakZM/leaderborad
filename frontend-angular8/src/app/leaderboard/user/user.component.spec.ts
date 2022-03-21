@@ -4,13 +4,24 @@ import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from "@angular/router/testing";
 import { MatButtonModule, MatCardModule, MatDialogModule, MatGridListModule, MatIconModule, MatTableModule, MatTooltipModule } from '@angular/material';
-import { PipesGlobalModule } from 'src/app/shared/pipe/pipes-global.module';
+import { PipesGlobalModule } from '../../shared/pipe/pipes-global.module';
 import { ToastrModule } from 'ngx-toastr';
-import { ToastComponent } from 'src/app/shared/component/toast/toast.component';
+import { ToastComponent } from '../../shared/component/toast/toast.component';
+import { IUser } from '../../shared/model/user.model';
+import { UserService } from '../../shared/api/user.service';
 
 describe('UserComponent', () => {
   let component: UserComponent;
   let fixture: ComponentFixture<UserComponent>;
+  let userService: UserComponent;
+
+  const expectedResult = {
+    id: 23652,
+    name: 'user name',
+    description: null,
+    step_counter: 0,
+  };
+  let USERS: IUser[] = [expectedResult];; 
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -48,9 +59,19 @@ describe('UserComponent', () => {
     fixture = TestBed.createComponent(UserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    // TeamService provided to the TestBed
+    userService = TestBed.get(UserService);
   });
 
-  it('User Component created', () => {
+  it('should be created', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Check getAll data', async() => {
+
+    spyOn(userService, 'getAll').and.returnValues(Promise.resolve(USERS));
+
+    await expectAsync(component.getAll()).toBeResolved(Promise.resolve(USERS))
   });
 });

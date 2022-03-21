@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { Inject } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { ServerUrl } from '../url/server.url';
 
@@ -33,7 +34,9 @@ export abstract class BaseReadonlyMultiService<T>  {
 }
 
 export abstract class BaseMultiService<T> extends BaseReadonlyMultiService<T>{
-  protected constructor(httpClient: HttpClient, urlSuffix: string) {
+  protected constructor(@Inject(HttpClient) protected httpClient: HttpClient,
+                        @Inject('urlSuffix') protected urlSuffix: string 
+                        ) {
     super(httpClient, urlSuffix);
   }
 

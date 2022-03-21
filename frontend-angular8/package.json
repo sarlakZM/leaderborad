@@ -1,6 +1,8 @@
 {
   "name": "frontend-angular8",
   "version": "0.0.0",
+  "keywords": ["Angular8", "Learboard Project", "Typescript"],
+  "author": "Zahra <sarlak.zh@gmail.com>(https://github.com/sarlakZM)",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
