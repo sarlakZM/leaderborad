@@ -1,0 +1,101 @@
+@import './_var';
+
+@mixin change-dialog-size($size) {
+    max-width: $size;
+    width: $size;
+}
+
+@mixin change-property-value($property,$size) {
+    #{$property}: $size;
+}
+
+.toast-container {
+    pointer-events: none;
+    position: fixed;
+    z-index: 999999;
+    top: 82px;
+    right: 12px;
+  }
+  
+.mat-dialog-container {
+    padding-top: 80px !important;
+    position: relative;
+    .mat-toolbar {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0;
+    }
+}
+
+
+.dialog-70 {
+    @include change-dialog-size(70vw)
+}
+.dialog-60 {
+    @include change-dialog-size(60vw)
+}
+.dialog-50 {
+   @include change-dialog-size(50vw)
+}
+.dialog-40 {
+    @include change-dialog-size(40vw)
+}
+
+
+
+.list {
+    @include change-property-value(padding, $padding__page);
+    @include change-property-value(width, 90%);
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+    .mat-header-cell, .mat-cell{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .mat-footer-row, .mat-row {
+        @include change-property-value(min-height, 50px)
+    }
+   .not-found-lists{
+    .no-result-img {
+        margin: 0 0 0 auto;
+        display: block;
+        position: relative;
+    }
+
+    .not-found-message {
+        position: absolute;
+        left: 40px;
+    }
+
+   }
+ 
+   div button {
+        margin-right: 6px;
+   }
+
+       
+
+}
+
+
+
+
+.ex-full-width {
+    @include  change-property-value(width, 100%)
+}
+
+.ex-spacer {
+   @include change-property-value(flex, 1 1 auto)
+}
+
+
+.start{
+    color: rgb(253, 253, 15);
+    size: 10px;
+    border: sold 1px rgb(224, 228, 13);
+}
+

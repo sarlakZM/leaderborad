@@ -58,14 +58,6 @@ export default class UserController extends BaseController<IUser, UserService>{
         }
     }
 
-    // async getScoreByTeam(req: Request, res: Response) {
-    //     const team_id: number | null = req.params && req.params.id ? parseInt(req.params.id, 10) : null ;
-    //     try {
-    //         const score:  IScore| number = await this.entityService.getScoreByTeam(team_id);
-    //         res.status(200).json(score);
-    //       } catch (e: any) {
-    //         res.status(500).json(e.message+"sfdsf");
-    //     }
-    // }
+
 
 }

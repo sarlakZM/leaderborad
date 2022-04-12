@@ -1,13 +1,21 @@
-
-# FrontendAngular8
-
-- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.29.
-- Typescript 3.5
+# Frontend
+- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+- Typescript 4.6
 - Styling with  [Material Angular](https://material.angular.io/) based on SCSS
 - Testing with Jasmin + Karma
-- Using await/async for working data api
 
+### Some Features
+- Using reactive form
+- Project structure and separate feature modules
+- Using models and interfaces
+- Error handling
+- Reactive programming (RXJS) for working with api data
+- Environment variables for using dynamic data in production or development
+- angular tech stack e.g. pipe, dependency injection, directive
+- An initial unittest for some sections
+- Using NGRX for showing total store 
 
+    
 ## For running the project use the following commands:
 
 ### Install Dependencies

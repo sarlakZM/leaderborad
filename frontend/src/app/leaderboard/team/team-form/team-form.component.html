@@ -1,0 +1,74 @@
+<mat-toolbar color="primary">
+
+    <mat-toolbar-row>
+        <mat-icon>add</mat-icon>
+        <span> {{ titleForm }}</span>
+        <span class="ex-spacer"></span>
+        <button mat-dialog-close mat-icon-button>
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading" class="custom-modal-loader"></mat-progress-bar>
+
+<form novalidate [formGroup]="formGroup" (ngSubmit)="add()">
+    <mat-dialog-content class="dialog-40">
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <div fxFlex.xs="100" fxFlex="100">
+                <mat-form-field class="ex-full-width form-group">       
+                    <mat-hint align="start">Max 20 characters</mat-hint>
+                    <mat-hint align="end">{{name.value?.length || 0 }}/20</mat-hint>
+                    <input placeholder="Name" #name 
+                            maxlength="20" matInput 
+                            maxlength="20" 
+                            formControlName="name" 
+                            class="form-control" 
+                            required vrAutofocus>
+                    <mat-error *ngIf="isFieldValid('name') || 
+                                 formGroup.get('name').hasError('required')">
+                        Name is required.
+                    </mat-error>
+                    <mat-error *ngIf="resMessage.hasOwnProperty('name') && !formGroup.get('name').hasError('required')">
+                        {{ resMessage.name }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div fxLayout="row">
+            <div fxFlex.xs="100" fxFlex="100">
+                <mat-form-field class="ex-full-width form-group">
+                    <input placeholder="Description" 
+                            matInput formControlName="description" 
+                            class="form-control"
+                            >
+                    <mat-error *ngIf="resMessage.hasOwnProperty('description')">
+                        {{resMessage.description}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <!-- <mat-error *ngIf="resMessage"> {{resMessage.non_field_errors}} </mat-error> -->
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button mat-button 
+                color="warn" 
+                aria-label="right" 
+                mat-dialog-close type="button"
+                >
+            <mat-icon>cancel</mat-icon> CANCEL
+        </button>
+        
+        <button mat-button   
+                mat-raised-button 
+                color="accent" 
+                ria-label="right" 
+                [disabled]="isLoading"
+                type="submit" 
+                >
+            <mat-icon>save</mat-icon> SAVE 
+        </button>
+        
+    </mat-dialog-actions>
+</form>

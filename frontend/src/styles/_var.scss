@@ -1,0 +1,12 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+
+/////////////////////////////////////////////////////////////////
+$padding__page: 24px;
+$padding__page__small: 16px;
+$color__border: #E0E0E0;
+@mixin cardBorder() {
+    border: 1px solid $color__border;
+}

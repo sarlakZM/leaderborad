@@ -15,50 +15,6 @@ abstract class BaseDao<T> {
     constructor(entity: string) {
         this.entity = entity;
         this.items[entity] = <any>{};
-        // this.items['teams']= <any> {
-        //     1: {
-        //         "id": 1,
-        //         "name": "team1",
-        //         "description": "test1",
-        //         "step_counter": "1"
-        //     },
-        //     2: {
-        //         id: "2",
-        //         "name": "team2",
-        //         "description": "test1",
-        //         "step_counter": "1"
-        //     },
-        //    3:{
-        //         id: "3",
-        //         "name": "team3",
-        //         "description": "test1",
-        //         "step_counter": "1"
-        //     }
-        // };
-
-        // this.items['users']= <any>{
-        //     1:{
-        //         "id": 1,
-        //         "name": "team1",
-        //         "description": "test1",
-        //         "step_counter": "1",
-        //         "team_id": 1
-        //     },
-        //     2:{
-        //         "id": 2,
-        //         "name": "team2",
-        //         "description": "test1",
-        //         "step_counter": "1",
-        //         "team_id": 2
-        //     },
-        //     3:{
-        //         "id": 2,
-        //         "name": "team3",
-        //         "description": "test1",
-        //         "step_counter": "1",
-        //         "team_id": 1
-        //     }
-        // }
     }
 
     findAll = async (): Promise<T[]> => this.items[this.entity] ? Object.values(this.items[this.entity]) : [];
