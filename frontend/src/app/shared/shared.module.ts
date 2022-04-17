@@ -26,7 +26,7 @@ import { DirectivesGlobalModule } from './directive/directive-global.module';
       timeOut: 4000,
       tapToDismiss: false,
       preventDuplicates: false,
-      maxOpened: 6,
+      maxOpened: 0,
       enableHtml: true,
       closeButton: true,
       toastComponent: ToastComponent,

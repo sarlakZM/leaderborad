@@ -13,10 +13,14 @@ And finally you can enter (http://127.0.0.1:4200) in browser url and go on .
 *Note => The client is connected by Server.url file ( it is in frondend.../shared/urls folder ) to backend url(...:7000)
 
 
-## More Information
+## More Information and View of project
 
  - [Back End](backend-nodejs-express/README.md)
 
- - [Frond End](frontend-angular8/README.md)
+ - [Frond End ngv8](frontend-angular8/README.md)
 
- - [Frond End v13/Rxjs](frontend/README.md)
+ - [Frond End ngv13/Rxjs](frontend/README.md)
+
+
+![img](docs/ui-team.png)
+![img](docs/ui-user.png)

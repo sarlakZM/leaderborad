@@ -7,6 +7,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { UserFormComponent } from './user-form.component';
 import { UserService } from 'src/app/shared/service/user.service';
 import { IUser } from 'src/app/shared/model/user.model';
+import { StoreModule } from '@ngrx/store';
+import { metaReducers, reducers } from 'src/app/shared/store/reducers/';
+import { EffectsModule } from '@ngrx/effects';
+import { effects } from 'src/app/shared/store/effects';
 
 
 describe('User Form(Dialog) Component', () => {
@@ -18,9 +22,14 @@ describe('User Form(Dialog) Component', () => {
     TestBed.configureTestingModule({
       declarations: [ UserFormComponent ],
       imports:[
-          BrowserAnimationsModule,
-          HttpClientTestingModule,
-          SharedModule
+            BrowserAnimationsModule,
+            HttpClientTestingModule,
+            SharedModule,
+            StoreModule.forRoot(reducers, {
+             metaReducers,
+            }),
+            StoreModule.forFeature('appState', reducers),
+            EffectsModule.forRoot(effects)
       ],
       
       providers:[

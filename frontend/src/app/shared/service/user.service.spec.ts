@@ -17,11 +17,10 @@ describe('UserService', () => {
 
   } );
 
-  it('should be created', () => {
+  it('should be created service', () => {
     expect(userService).toBeTruthy();
   });
-
-  
+ 
   it('Create user', async () => {
     const expectedResult = {
       id: 23652,

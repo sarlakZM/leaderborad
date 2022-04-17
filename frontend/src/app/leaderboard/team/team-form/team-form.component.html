@@ -24,12 +24,12 @@
                             formControlName="name" 
                             class="form-control" 
                             required vrAutofocus>
-                    <mat-error *ngIf="isFieldValid('name') || 
-                                 formGroup.get('name').hasError('required')">
-                        Name is required.
-                    </mat-error>
-                    <mat-error *ngIf="resMessage.hasOwnProperty('name') && !formGroup.get('name').hasError('required')">
-                        {{ resMessage.name }}
+                    <mat-error *ngIf="formGroup.controls['name'].touched &&
+                            formGroup.controls['name'].hasError('required')">
+                            Name is required.
+                    </mat-error> 
+                    <mat-error *ngIf="resMessage.hasOwnProperty('name')">
+                         {{ resMessage.name }}
                     </mat-error>
                 </mat-form-field>
             </div>

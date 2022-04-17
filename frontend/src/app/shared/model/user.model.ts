@@ -1,5 +1,5 @@
 export interface IUser {
-    id?: number;
+    id: number;
     name: string;
     description: string | null;
     step_counter: number | null;

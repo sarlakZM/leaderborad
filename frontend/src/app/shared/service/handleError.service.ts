@@ -1,4 +1,4 @@
-import { SystemMessage } from '../support/messages.helper';
+import { SystemMessages } from '../support/system-messages';
 
 export class HandleErrorService {
   constructor(private _formName: any = '') { }
@@ -21,23 +21,23 @@ export class HandleErrorService {
         break;
 
       case 401:
-        errMsg.result = SystemMessage.unauthorized;
+        errMsg.result = SystemMessages.unauthorized;
         break;
 
       case 404:
-        errMsg.result = SystemMessage.recordNotFound;
+        errMsg.result = SystemMessages.recordNotFound;
         break;
       case 0:
-        errMsg.result = SystemMessage.errorInConnectMessage;
+        errMsg.result = SystemMessages.errorInConnectMessage;
         break;
       case 500:
-        errMsg.result = SystemMessage.InternalServerError;
+        errMsg.result = SystemMessages.InternalServerError;
         break;
       case 502:
-        errMsg.result = SystemMessage.errorBadGatewayMessage;
+        errMsg.result = SystemMessages.errorBadGatewayMessage;
         break;
       default:
-        errMsg.result = SystemMessage.unKnown;
+        errMsg.result = SystemMessages.unKnown;
         break;
     }
 

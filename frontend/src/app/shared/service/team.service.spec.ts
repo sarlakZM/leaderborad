@@ -1,7 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { ITeam } from '../model/team.model';
 
 import { TeamService } from './team.service';
 
@@ -18,7 +17,7 @@ describe('TeamService', () => {
 
   });
 
-  it('should be created', () => {
+  it('should be created service', () => {
     expect(teamService).toBeTruthy();
   });
 
@@ -40,7 +39,5 @@ describe('TeamService', () => {
     expect(spyCreate).toHaveBeenCalledWith(expectedResult);
 
   });
-  
- 
 
 });

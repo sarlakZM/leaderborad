@@ -1,6 +1,16 @@
 {
   "name": "frontend",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "Zahra Sarlak <sarlak.zh@gmail.com>(https://github.com/sarlakZM)",
+  "keywords": [
+    "Angular 13",
+    "Leaderboard",
+    "assignment",
+    "rxjs",
+    "ngrx",
+    "Angular latest + rxjs + ngrx",
+    "Angular13 + store and state managemnet"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,6 +19,10 @@
     "test": "ng test"
   },
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sarlakZM/leaderborad.git"
+  },
   "dependencies": {
     "@angular/animations": "~13.3.0",
     "@angular/cdk": "^13.3.2",
@@ -23,7 +37,8 @@
     "@ngrx/effects": "^13.1.0",
     "@ngrx/store": "^13.1.0",
     "@ngrx/store-devtools": "^13.1.0",
-    "material-design-icons": "^3.0.1",
+    "lodash": "^4.17.21",
+    "material-icons": "^1.10.8",
     "ngx-toastr": "^14.2.3",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
@@ -34,8 +49,10 @@
     "@angular/cli": "~13.3.2",
     "@angular/compiler-cli": "~13.3.0",
     "@types/jasmine": "~3.10.0",
+    "@types/lodash": "^4.14.181",
     "@types/node": "^12.11.1",
     "jasmine-core": "~4.0.0",
+    "jasmine-marbles": "^0.9.2",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.1.0",

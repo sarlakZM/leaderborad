@@ -4,7 +4,7 @@ import {By} from "@angular/platform-browser";
 import { AutofocusDirective } from './focus.directive';
 
 @Component({
-  template: `<input type="text" vrAutofocus>`,
+  template: `<input type="text" #name vrAutofocus>`,
   styles: ['input:focus { background-color: blue; }input { background-color: red; }']
 
 })
@@ -16,7 +16,6 @@ describe('Directive: vrAutofocus', () => {
   let component: TestFocusComponent;
   let fixture: ComponentFixture<TestFocusComponent>;
   let inputEl: DebugElement;
-  let inputElFocus: DebugElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -31,12 +30,8 @@ describe('Directive: vrAutofocus', () => {
   });
 
 
-  it('auto focus input', () => {
-    setTimeout(()=> {
-      inputElFocus = fixture.debugElement.query(By.css(':focus'));
-      expect(inputElFocus.name).toBe('input');
-    },1000)
-
+  it('auto focus input', async() => {
+      expect(inputEl.name).toEqual('input');
   });
 
 });

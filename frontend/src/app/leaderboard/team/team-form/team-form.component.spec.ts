@@ -8,6 +8,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { TeamFormComponent } from './team-form.component';
 import { TeamService } from 'src/app/shared/service/team.service';
 import { ITeam } from 'src/app/shared/model/team.model';
+import { StoreModule } from '@ngrx/store';
+import { metaReducers, reducers } from 'src/app/shared/store/reducers/';
+import { effects } from 'src/app/shared/store/effects';
+import { EffectsModule } from '@ngrx/effects';
 
 
 describe('Team From(Dialog) Component', () => {
@@ -21,7 +25,12 @@ describe('Team From(Dialog) Component', () => {
       imports:[
         BrowserAnimationsModule,
         HttpClientTestingModule,
-        SharedModule
+        SharedModule,
+        StoreModule.forRoot(reducers, {
+            metaReducers,
+        }),
+        StoreModule.forFeature('appState', reducers),
+        EffectsModule.forRoot(effects)
       ],
       providers:[
         { provide: MAT_DIALOG_DATA, useValue: {} },
@@ -42,11 +51,10 @@ describe('Team From(Dialog) Component', () => {
     expect(component).toBeTruthy();
   });
 
- 
 
   it('Check the title of dialog team', () => {
 
-    //Convert readonly property to writable
+    // Convert readonly property to writable
     const mock = <T extends {}, K extends keyof T>(object: T, property: K, value: T[K]) => {
         Object.defineProperty(object, property, { get: () => value });
     };

@@ -5,7 +5,7 @@
     <span><strong> {{ routeTitle }} </strong></span>
       <button mat-stroked-button disabled>
         <mat-icon class="start">star</mat-icon>
-        Total Score : <strong>{{ totalScore }}</strong>
+        Total Score : <strong>{{ totalScore$ | async }}</strong>
       </button> 
       <div>
         <button fxFlex="20" (click)="refresh()" type="button" mat-fab mat-mini-fab 
@@ -20,7 +20,7 @@
 
 
   </mat-card>
-  <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource$" class="mat-elevation-z8">
     
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -50,7 +50,7 @@
     <mat-header-row  *matHeaderRowDef="visibleColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: visibleColumns;"></mat-row>
   </mat-table>
-  <mat-card *ngIf="dataSource.length == 0" fxLayout="row" class="not-found-lists">  
+  <mat-card *ngIf="!dataSource$" fxLayout="row" class="not-found-lists">  
       <div class="not-found-message">
         <h3>please try again.</h3>
         <button (click)="refresh()" mat-button matTooltip="Retry" matTooltipPosition="above" color="warn" aria-label="right">
