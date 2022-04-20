@@ -20,11 +20,10 @@ import { IUser } from 'src/app/shared/model/user.model';
 export class UserComponent implements OnInit, OnDestroy {
 
   protected subscription$! : Subscription;
-  dataSource$!: Observable<IUser[]>;
+  dataSource: IUser[] = [];
   routeTitle!: string;
   totalScore$: Observable<number> = of(0) ;
   team_id: string | number | null = null;
-  isLoading$!:Observable<boolean>;
 
   columns: ListColumn[] = [
     { name: 'NAME', property: 'name', visible: true, deactivatable: false, isModelProperty: true },
@@ -45,7 +44,7 @@ export class UserComponent implements OnInit, OnDestroy {
       this.routeTitle = activatedRoute.snapshot.data['title']
       this.subscription$ = this.activatedRoute.params.pipe(map((params) => params['id'])).
       subscribe(id => this.team_id= id);
-      this.dataSource$ = this.store.pipe(select(fromUser.selectUsers));
+      this.store.pipe(select(fromUser.selectUsers)).subscribe(res => this.dataSource = res );
       this.totalScore$ = this.store.pipe(select(fromUser.selectTotalScoreUsers))
   }
 
@@ -55,7 +54,7 @@ export class UserComponent implements OnInit, OnDestroy {
  
   refresh(): void{
     this.store.dispatch(ActionsUser.GetUsersAction({team_id:this.team_id}));
-    this.dataSource$ = this.store.pipe(select(fromUser.selectUsers));
+    this.store.pipe(select(fromUser.selectUsers)).subscribe(res => this.dataSource = res );
     this.totalScore$ = this.store.pipe(select(fromUser.selectTotalScoreUsers))
   }
 

@@ -19,7 +19,6 @@ export class TeamFormComponent implements OnInit, OnDestroy {
   isLoading: boolean = false;
   titleForm: string = '';
   resMessage = { description : '', name: ''};
-  formSumitAttempt: boolean = false;
   subscription$! : Subscription;
   formGroup!: FormGroup;
   

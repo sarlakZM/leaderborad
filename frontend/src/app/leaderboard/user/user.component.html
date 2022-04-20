@@ -17,11 +17,9 @@
               <mat-icon>add</mat-icon>
           </button>
         </div> 
-
     </mat-card>
 
-    <mat-table #table [dataSource]="dataSource$" class="mat-elevation-z8">
-      
+    <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8"> 
       <!--- Note that these columns can be defined in any order.
             The actual rendered columns are set as a property on the row definition" -->
         <!-- Item List show -->
@@ -50,7 +48,7 @@
       <mat-row *matRowDef="let row; columns: visibleColumns;"></mat-row>
     </mat-table>
 
-    <mat-card *ngIf="!dataSource$" fxLayout="row" class="not-found-lists">  
+    <mat-card *ngIf="dataSource.length == 0" fxLayout="row" class="not-found-lists">  
       <div class="not-found-message">
           <h3>please try again.</h3>
           <button (click)="refresh()" mat-button matTooltip="Retry" matTooltipPosition="above" color="warn" aria-label="right">

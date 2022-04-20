@@ -18,10 +18,9 @@ import { fromTeam } from 'src/app/shared/store/selectors/';
 })
 export class TeamComponent implements OnInit { 
   protected subscription$! : Subscription;
-  dataSource$!: Observable<ITeam[]>;
+  dataSource : ITeam[] = [];
   routeTitle!: string;
   totalScore$: Observable<number> = of(0) ;
-  isLoading$!:Observable<boolean>;
 
   columns: ListColumn[] = [
     { name: 'NAME', property: 'name', visible: true, deactivatable: false, isModelProperty: true },
@@ -41,7 +40,7 @@ export class TeamComponent implements OnInit {
     private router: Router
     ) {
       this.routeTitle = activatedRoute.snapshot.data['title']
-      this.dataSource$ = this.store.pipe(select(fromTeam.selectTeams));
+      this.store.pipe(select(fromTeam.selectTeams)).subscribe(res => this.dataSource = res );
       this.totalScore$ = this.store.pipe(select(fromTeam.selectTotalScoreTeams));
   }
 
