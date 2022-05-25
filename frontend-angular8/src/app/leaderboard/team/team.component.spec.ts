@@ -10,7 +10,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { ToastComponent } from '../../shared/component/toast/toast.component';
 import { ITeam } from '../../shared/model/team.model';
 import { TeamService } from '../../shared/api/team.service';
-import { of } from 'rxjs';
 
 
 describe('TeamComponent', () => {

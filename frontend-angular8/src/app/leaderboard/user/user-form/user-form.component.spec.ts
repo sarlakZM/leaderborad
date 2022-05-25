@@ -3,22 +3,17 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UserFormComponent } from './user-form.component';
 
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { SharedModule } from 'src/app/shared/shared.module';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from "@angular/router/testing";
 import { MatButtonModule, MatCardModule, MatDialogModule, MatDialogRef, MatFormFieldModule, MatGridListModule, MatIconModule, MatInputModule, MatProgressBarModule, MatSlideToggleModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule, MAT_DIALOG_DATA } from '@angular/material';
 
-import { RouterModule } from '@angular/router';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { PipesGlobalModule } from 'src/app/shared/pipe/pipes-global.module';
 import { ToastrModule } from 'ngx-toastr';
 import { ToastComponent } from 'src/app/shared/component/toast/toast.component';
 import { UserService } from 'src/app/shared/api/user.service';
-import { NotificationService } from 'src/app/shared/service/notification.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { routes } from 'src/app/app-routing.module'
 
 
 describe('User Form(Dialog) Component', () => {

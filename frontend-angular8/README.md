@@ -5,8 +5,6 @@
 - Typescript 3.5
 - Styling with  [Material Angular](https://material.angular.io/) based on SCSS
 - Testing with Jasmin + Karma
-- Using await/async for working data api
-
 
 ## For running the project use the following commands:
 

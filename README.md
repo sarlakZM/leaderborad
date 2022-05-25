@@ -1,5 +1,5 @@
 # APSIS coding assignment full stack
-You will find the coding assignment in the ASSIGNMENT.md file.
+You will find the coding assignment in the [Assignment.md](Assignment.md) file.
 
 
 # For running the project :
@@ -17,9 +17,9 @@ And finally you can enter (http://127.0.0.1:4200) in browser url and go on .
 
  - [Back End](backend-nodejs-express/README.md)
 
- - [Frond End ngv8](frontend-angular8/README.md)
+ - [Frond End Angular8](frontend-angular8/README.md)
 
- - [Frond End ngv13/Rxjs](frontend/README.md)
+ - [Frond End Angular13/NGRX](frontend/README.md)
 
 
 ![img](docs/ui-team.png)

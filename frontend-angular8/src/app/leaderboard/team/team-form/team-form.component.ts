@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component, Inject, Injector, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, Inject, Injector, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef, MatRadioChange } from '@angular/material';
 import { TeamService } from 'src/app/shared/api/team.service';
 import { BaseFormModalAddComponent } from 'src/app/shared/component/base-form-modal-add.component';

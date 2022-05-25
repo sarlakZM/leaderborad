@@ -75,10 +75,6 @@ describe('Team From(Dialog) Component', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
      let userService = fixture.debugElement.injector.get(TeamService);
-    // let formBuilder = fixture.debugElement.injector.get(FormBuilder);
-    // // let injector = fixture.debugElement.injector.get(Injector);
-    // let dialogRef = fixture.debugElement.injector.get(MatDialogRef);
-    // let data = fixture.debugElement.injector.get(MAT_DIALOG_DATA);
  
   });
 
