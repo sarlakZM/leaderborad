@@ -30,7 +30,7 @@ Users should be able to:
 ---
 
 ## Repository Structure
-```bash
+```
 leaderborad/
 ├── backend-nodejs-express
 ├── docs
@@ -38,7 +38,7 @@ leaderborad/
 ├── frontend-angular8
 ├── Assignment.md
 └── README.md
-
+```
 ### Sections
 
 - **backend-nodejs-express**  
@@ -130,6 +130,23 @@ bash
 http://127.0.0.1:4200
 ```
 ---
+## Project Parts
+
+- [Backend README](backend-nodejs-express/README.md)
+- [Frontend Angular 8 README](frontend-angular8/README.md)
+- [Frontend Angular 13 + NgRx README](frontend/README.md)
+
+---
+
+## Why Two Frontends?
+
+This repository includes **two frontend implementations** of the same assignment:
+
+- **Angular 8 version**  
+  A solution aligned closely with the original frontend requirement
+
+- **Angular 13 + NgRx version**  
+  A more modern alternative showcasing updated Angular practices, reactive state handling, and stronger scalability
 
 ## Important Note
 
@@ -154,23 +171,6 @@ Please ensure the backend is running before using the frontend application.
 
 ---
 
-## Project Parts
-
-- [Backend README](backend-nodejs-express/README.md)
-- [Frontend Angular 8 README](frontend-angular8/README.md)
-- [Frontend Angular 13 + NgRx README](frontend/README.md)
-
----
-
-## Why Two Frontends?
-
-This repository includes **two frontend implementations** of the same assignment:
-
-- **Angular 8 version**  
-  A solution aligned closely with the original frontend requirement
-
-- **Angular 13 + NgRx version**  
-  A more modern alternative showcasing updated Angular practices, reactive state handling, and stronger scalability
 
 ---
  Assignment for [APSIS](https://www.apsis.com/)
