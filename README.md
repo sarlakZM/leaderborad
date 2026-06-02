@@ -135,7 +135,6 @@ http://127.0.0.1:4200
 - [Backend README](backend-nodejs-express/README.md)
 - [Frontend Angular 8 README](frontend-angular8/README.md)
 - [Frontend Angular 13 + NgRx README](frontend/README.md)
-
 ---
 
 ## Why Two Frontends?
@@ -162,15 +161,14 @@ Please ensure the backend is running before using the frontend application.
 ---
 
 ## Demo
-
-### Team View
-![img](docs/ui-team.png)
-
-### User View
-![img](docs/ui-user.png)
-
----
-
-
+| Section | Demo |
+| :------ | :--- |
+| Root Docs - Team View | ![img](docs/ui-team.png) |
+| Root Docs - User View | ![img](docs/ui-user.png) |
+| Backend - Architecture Diagram | ![img](backend-nodejs-express/src/assets/leaderboard-backend.drawio.png) |
+| Frontend Angular 8 - Architecture Diagram | ![img](frontend-angular8/src/assets/leaderboard-frontend.drawio.png) |
+| Frontend Angular 13 + NgRx - Architecture Diagram | ![img](frontend/src/assets/leaderboard-frontend-ngrx.drawio.png) | 
+| Frontend Angular 13 + NgRx - Team View | ![img](frontend/src/assets/ui-team.png) |
+| Frontend Angular 13 + NgRx - User View | ![img](frontend/src/assets/ui-user.png) |
 ---
  Assignment for [APSIS](https://www.apsis.com/)
